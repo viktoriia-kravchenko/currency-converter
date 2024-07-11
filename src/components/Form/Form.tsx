@@ -7,6 +7,8 @@ import { API_KEY, BASE_URL, ENDPOINT } from '@/src/constants/Api';
 import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 import Selector from '../Selector/Selector';
 
+import styles from './Form.module.scss';
+
 const Form: React.FC = () => {
   const router = useRouter();
   const pathname = usePathname();
@@ -99,37 +101,35 @@ const Form: React.FC = () => {
   };
 
   return (
-    <>
-      <form>
-        <Selector
-          labels={['Amount', 'Base']}
-          amount={fromAmount}
-          currency={base}
-          currencyList={options}
-          handleAmountChange={handleBaseAmountChange}
-          updateParams={updateParams}
-        />
+    <form className={styles.form}>
+      <Selector
+        labels={['Amount', 'Base']}
+        amount={fromAmount}
+        currency={base}
+        currencyList={options}
+        handleAmountChange={handleBaseAmountChange}
+        updateParams={updateParams}
+      />
 
-        <Box sx={{ marginBottom: 2, textAlign: 'center' }}>
-          <IconButton
-            aria-label="reverse"
-            color="success"
-            onClick={reverseCurrency}
-          >
-            <SyncAltIcon />
-          </IconButton>
-        </Box>
+      <Box sx={{ marginBottom: 2, textAlign: 'center' }}>
+        <IconButton
+          aria-label="reverse"
+          color="success"
+          onClick={reverseCurrency}
+        >
+          <SyncAltIcon />
+        </IconButton>
+      </Box>
 
-        <Selector
-          labels={['Converted to', 'Quote']}
-          amount={toAmount}
-          currency={quote}
-          currencyList={options}
-          handleAmountChange={handleQuoteChange}
-          updateParams={updateParams}
-        />
-      </form>
-    </>
+      <Selector
+        labels={['Converted to', 'Quote']}
+        amount={toAmount}
+        currency={quote}
+        currencyList={options}
+        handleAmountChange={handleQuoteChange}
+        updateParams={updateParams}
+      />
+    </form>
   );
 };
 

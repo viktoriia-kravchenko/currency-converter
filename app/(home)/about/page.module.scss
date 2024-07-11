@@ -1,15 +1,30 @@
 .container {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  padding: 2rem;
+  max-width: 900px;
+  padding: 30px;
 
   .title {
+    margin-bottom: 1.6em;
+    text-align: center;
+    font-size: 1.6em;
     color: #1e8449;
   }
 
-  .text {
-    font-size: 18px;
+  .greeting {
+    margin-bottom: 1.8em;
+    font-size: 1.2em;
+  }
+
+  .subtitle {
+    margin-bottom: 0.7em;
+    font-size: 1.1em;
+  }
+
+  .description {
+    margin-bottom: 1.6em;
+    font-size: 1em;
+  }
+
+  .farewell {
+    font-size: 1.1em;
   }
 }

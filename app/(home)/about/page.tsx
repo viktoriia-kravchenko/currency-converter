@@ -1,11 +1,34 @@
 import styles from './page.module.scss';
 
-const About = () => {
+const About: React.FC = () => {
   return (
     <section className={styles.container}>
-      <h2 className={styles.title}>About page</h2>
+      <h2 className={styles.title}>About Our Currency Converter App</h2>
 
-      <p className={styles.text}>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Praesentium quos debitis laboriosam iure amet tenetur, iusto officiis dolor fugit blanditiis reprehenderit sapiente optio nisi, assumenda dolorem repellat nemo mollitia cumque obcaecati dicta perspiciatis aut, nesciunt alias? Corrupti ad eveniet consectetur cum vitae nulla quaerat. Sequi quas dicta autem animi alias velit harum accusantium voluptas minus voluptatum. Quisquam nesciunt corporis dignissimos, illo error sed reiciendis maxime nobis voluptatem? Nemo vel, quidem, repellat quo recusandae magnam aperiam doloremque sed nam eum placeat corrupti hic blanditiis sit sapiente aspernatur! Veniam magni nulla dolor, aperiam enim quas eligendi tempore. Consequatur quae placeat fugit quam.</p>
+      <p className={styles.greeting}>
+        Welcome to our Currency Converter App! This app is designed to help you
+        easily convert between different currencies and keep track of the latest
+        exchange rates.
+      </p>
+
+      <h3 className={styles.subtitle}>Main Tab</h3>
+      <p className={styles.description}>
+        The Main tab allows you to convert an entered amount
+        from the selected base currency to a quote currency, with the option to
+        switch between the two using a button with arrows.
+      </p>
+
+      <h3 className={styles.subtitle}>Rates Tab</h3>
+      <p className={styles.description}>
+        The Rates tab displays a table of converted amounts in
+        various quote currencies based on the entered sum and selected base
+        currency, updating values dynamically when changes are made.
+      </p>
+
+      <p className={styles.farewell}>
+        We hope you find our app useful and easy to use. If you have any
+        questions or feedback, feel free to reach out to us!
+      </p>
     </section>
   );
 };

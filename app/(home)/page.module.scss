@@ -1,12 +1,11 @@
 .container {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  padding: 2rem 1rem;
+  max-width: 900px;
+  padding: 30px;
 
   .title {
-    margin-bottom: 10%;
+    margin-bottom: 1.6em;
+    text-align: center;
+    font-size: 1.6em;
     color: #1e8449;
   }
 }

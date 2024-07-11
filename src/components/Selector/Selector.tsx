@@ -36,7 +36,7 @@ const Selector: React.FC<SelectorProps> = props => {
         onChange={handleAmountChange}
       />
 
-      <FormControl>
+      <FormControl sx={{ minWidth: '90px' }}>
         <InputLabel id="select-label">{labels[1]}</InputLabel>
         <Select
           labelId="select-label"
