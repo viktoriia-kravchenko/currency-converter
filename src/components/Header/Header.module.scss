@@ -1,0 +1,16 @@
+.header {
+  width: 100%;
+  height: var(--h-header);
+  position: fixed;
+  top: 0;
+  z-index: 10;
+  display: block;
+  align-items: center;
+  color: #ffffff;
+  background-color: #009933;
+
+  .content {
+    text-align: center;
+    line-height: var(--h-header);
+  }
+}

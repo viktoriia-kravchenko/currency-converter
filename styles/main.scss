@@ -3,6 +3,7 @@
   --font-mono: ui-monospace, Menlo, Monaco, 'Cascadia Mono', 'Segoe UI Mono',
     'Roboto Mono', 'Oxygen Mono', 'Ubuntu Monospace', 'Source Code Pro',
     'Fira Mono', 'Droid Sans Mono', 'Courier New', monospace;
+  --h-header: 68px;
 }
 
 * {
@@ -13,10 +14,32 @@
 
 html,
 body {
-  max-width: 100vw;
-  overflow-x: hidden;
+  min-height: 100%;
+  height: 100%;
+}
+
+body {
+  min-height: calc(100% - var(--h-header));
+  height: calc(100% - var(--h-header));
 }
 
 a {
   text-decoration: none;
+}
+
+.layout {
+  position: relative;
+  display: grid;
+  gap: 5px;
+  grid-template-columns: 1fr 3fr;
+
+  min-height: 100%;
+  width: 100%;
+  margin-top: var(--h-header);
+  margin-inline: auto;
+
+  &-content {
+    width: 100%;
+    height: 100%;
+  }
 }
