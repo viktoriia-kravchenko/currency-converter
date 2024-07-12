@@ -2,6 +2,10 @@
 
 This project is a currency converting app. It is designed to help you easily convert between different currencies and keep track of the latest exchange rates. For more details on the API used, visit [Exchange Rates API Documentation](https://exchangeratesapi.io/documentation/).
 
+## Demo
+
+Live demo is available at [DEMO LINK](https://currency-converter-49g157b6d-viktoriiakravchenkos-projects.vercel.app)
+
 ## Technologies Used
 
 - Next.js
