@@ -1,0 +1,15 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 900px;
+  padding: 50px;
+
+  .title {
+    margin-bottom: 1.6em;
+    text-align: center;
+    font-size: 1.6em;
+    color: #e60e0e;
+  }
+}

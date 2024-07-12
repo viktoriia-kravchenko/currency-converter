@@ -1,21 +1,29 @@
 'use client';
 
+import { Button } from '@mui/material';
+import { useRouter } from 'next/navigation';
 import { useEffect } from 'react';
+
+import styles from './GenericError.module.scss';
 
 interface GenericErrorProps {
   error: Error & { digest?: string };
-  reset: () => void;
 }
 
-const GenericError = ({ error, reset }: GenericErrorProps) => {
+const GenericError = ({ error }: GenericErrorProps) => {
   useEffect(() => {
     console.error(error);
   }, [error]);
 
+  const { refresh } = useRouter();
+
   return (
-    <div>
-      <h2>Something went wrong!</h2>
-      <button onClick={() => reset()}>Try again</button>
+    <div className={styles.container}>
+      <h2 className={styles.title}>Something went wrong!</h2>
+
+      <Button variant="outlined" color="error" onClick={refresh}>
+        Try again
+      </Button>
     </div>
   );
 };
