@@ -22,9 +22,7 @@ const RatesTableSection: React.FC = () => {
 
   const [base, setBase] = useState(searchParams.get('base') || 'EUR');
   const [baseAmount, setBaseAmount] = useState(1);
-
   const [options, setOptions] = useState<string[]>([]);
-
   const [rates, setRates] = useState<RatesTableRow[]>([]);
 
   useEffect(() => {
@@ -55,14 +53,6 @@ const RatesTableSection: React.FC = () => {
     [rates, baseAmount],
   );
 
-  const handleBaseAmountChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const value = e.target.value;
-
-    if (/^\d*$/.test(value)) {
-      setBaseAmount(+value);
-    }
-  };
-
   const createQueryString = useCallback(
     (name: string, value: string) => {
       const params = new URLSearchParams(searchParams.toString());
@@ -79,6 +69,14 @@ const RatesTableSection: React.FC = () => {
     router.push(pathname + '?' + createQueryString(...changes));
 
     setBase(changes[1]);
+  };
+
+  const handleBaseAmountChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const value = e.target.value;
+
+    if (/^\d*$/.test(value)) {
+      setBaseAmount(+value);
+    }
   };
 
   return (

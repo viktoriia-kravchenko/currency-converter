@@ -21,24 +21,6 @@ const MutualConvertingForm: React.FC = () => {
   const [isBaseChanged, setIsBaseChanged] = useState(true);
   const [rate, setRate] = useState(1);
 
-  const createQueryString = useCallback(
-    (name: string, value: string) => {
-      const params = new URLSearchParams(searchParams.toString());
-      params.set(name, value);
-
-      return params.toString();
-    },
-    [searchParams],
-  );
-
-  const updateParams = (params: { [key: string]: string | '' }) => {
-    const changes = Object.entries(params)[0];
-
-    router.push(pathname + '?' + createQueryString(...changes));
-
-    changes[0] === 'quote' ? setQuote(changes[1]) : setBase(changes[1]);
-  };
-
   useEffect(() => {
     fetch(`${BASE_URL}${ENDPOINT}?access_key=${API_KEY}`)
       .then(res => res.json())
@@ -58,6 +40,24 @@ const MutualConvertingForm: React.FC = () => {
     }
   }, [base, quote]);
 
+  const createQueryString = useCallback(
+    (name: string, value: string) => {
+      const params = new URLSearchParams(searchParams.toString());
+      params.set(name, value);
+
+      return params.toString();
+    },
+    [searchParams],
+  );
+
+  const updateParams = (params: { [key: string]: string | '' }) => {
+    const changes = Object.entries(params)[0];
+
+    router.push(pathname + '?' + createQueryString(...changes));
+
+    changes[0] === 'quote' ? setQuote(changes[1]) : setBase(changes[1]);
+  };
+
   const reverseCurrency = () => {
     const params = new URLSearchParams(searchParams);
     const currentValue = base;
@@ -71,7 +71,7 @@ const MutualConvertingForm: React.FC = () => {
     router.replace(pathname + '?' + params.toString());
   };
 
-  let toAmount;
+  let toAmount = 0;
   let fromAmount = 0;
 
   if (isBaseChanged) {
