@@ -7,9 +7,9 @@ import { API_KEY, BASE_URL, ENDPOINT } from '@/src/constants/Api';
 import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 import Selector from '../Selector/Selector';
 
-import styles from './Form.module.scss';
+import styles from './MutualConvertingForm.module.scss';
 
-const Form: React.FC = () => {
+const MutualConvertingForm: React.FC = () => {
   const router = useRouter();
   const pathname = usePathname();
   const searchParams = useSearchParams();
@@ -133,4 +133,4 @@ const Form: React.FC = () => {
   );
 };
 
-export default Form;
+export default MutualConvertingForm;

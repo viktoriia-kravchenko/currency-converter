@@ -1,6 +1,6 @@
 import styles from './page.module.scss';
 
-const About: React.FC = () => {
+const page: React.FC = () => {
   return (
     <section className={styles.container}>
       <h2 className={styles.title}>About Our Currency Converter App</h2>
@@ -33,4 +33,4 @@ const About: React.FC = () => {
   );
 };
 
-export default About;
+export default page;

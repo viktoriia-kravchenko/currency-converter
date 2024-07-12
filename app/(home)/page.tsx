@@ -1,18 +1,16 @@
 import { Suspense } from 'react';
-import Form from '@/src/components/Form/Form';
+import MutualConvertingForm from '@/src/components/MutualConvertingForm/MutualConvertingForm';
 
 import styles from './page.module.scss';
 
-const Main: React.FC = () => {
-  return (
-    <section className={styles.container}>
-      <h2 className={styles.title}>Main page</h2>
+const page: React.FC = () => (
+  <section className={styles.container}>
+    <h2 className={styles.title}>Main page</h2>
 
-      <Suspense>
-        <Form />
-      </Suspense>
-    </section>
-  );
-};
+    <Suspense>
+      <MutualConvertingForm />
+    </Suspense>
+  </section>
+);
 
-export default Main;
+export default page;
