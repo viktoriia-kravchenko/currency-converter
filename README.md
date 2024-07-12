@@ -4,11 +4,11 @@ This project is a currency converting app. It is designed to help you easily con
 
 ## Technologies Used
 
-- **Next.js**
-- **JavaScript**
-- **TypeScript**
-- **SASS**
-- **Material UI**
+- Next.js
+- JavaScript
+- TypeScript
+- SASS
+- Material UI
 
 ## Getting Started
 

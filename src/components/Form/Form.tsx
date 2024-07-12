@@ -46,7 +46,7 @@ const Form: React.FC = () => {
         setOptions([data.base, ...Object.keys(data.rates)]);
         setRate(data.rates[base]);
       });
-  }, []);
+  }, [base]);
 
   useEffect(() => {
     if (base !== null && quote !== null) {
