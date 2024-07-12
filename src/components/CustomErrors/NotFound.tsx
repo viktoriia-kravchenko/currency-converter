@@ -1,12 +1,14 @@
 import Link from 'next/link';
 
+import styles from './GenericError.module.scss';
+
 const NotFound = () => (
-  <div>
-    <h2>Not Found</h2>
+  <div className={styles.container}>
+    <h2 className={styles.title}>This page could not be found.</h2>
 
-    <p>This page could not be found.</p>
-
-    <Link href="/">Return Home</Link>
+    <Link href="/" className={styles.link}>
+      Return Home
+    </Link>
   </div>
 );
 
